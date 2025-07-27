@@ -8,6 +8,8 @@ type Scene = 'start' | 'gaming' | 'chat' | 'end';
 export default function Index() {
   const [currentScene, setCurrentScene] = useState<Scene>('start');
   const [countdown, setCountdown] = useState(5);
+  
+  const characterImageUrl = 'https://cdn.poehali.dev/files/1307ca73-70a3-4484-933b-6084ae4a5297.png';
 
   const scenes = [
     { id: 'start', name: 'Стартовая сцена', icon: 'Play' },
@@ -42,6 +44,22 @@ export default function Index() {
           </div>
           <div className="w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
           <span className="text-red-400 font-opensans font-semibold">LIVE</span>
+        </div>
+      </div>
+      
+      {/* Character Avatar */}
+      <div className="fixed bottom-8 right-8 z-20">
+        <div className="relative">
+          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-stream-orange/50 animate-pulse-glow shadow-2xl">
+            <img 
+              src={characterImageUrl} 
+              alt="Streamer Character" 
+              className="w-full h-full object-cover object-center scale-110"
+            />
+          </div>
+          <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-white animate-pulse flex items-center justify-center">
+            <div className="w-2 h-2 bg-white rounded-full"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -89,8 +107,12 @@ export default function Index() {
         
         <div className="fixed bottom-6 right-6 bg-black/80 backdrop-blur-md rounded-2xl p-4 border border-stream-orange/30">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-stream-orange to-stream-purple rounded-full flex items-center justify-center">
-              <Icon name="User" size={20} className="text-white" />
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-stream-orange">
+              <img 
+                src={characterImageUrl} 
+                alt="Streamer" 
+                className="w-full h-full object-cover object-center scale-110"
+              />
             </div>
             <div>
               <div className="font-opensans font-semibold text-white">Стример</div>
@@ -113,8 +135,17 @@ export default function Index() {
             Время для ваших вопросов и общения!
           </p>
           
-          <div className="bg-black/50 backdrop-blur-md rounded-3xl p-8 border border-stream-purple/30 mb-8">
-            <Icon name="MessageCircle" size={60} className="mx-auto mb-4 text-stream-purple" />
+          <div className="bg-black/50 backdrop-blur-md rounded-3xl p-8 border border-stream-purple/30 mb-8 relative">
+            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+              <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-stream-purple shadow-lg">
+                <img 
+                  src={characterImageUrl} 
+                  alt="Streamer" 
+                  className="w-full h-full object-cover object-center scale-110"
+                />
+              </div>
+            </div>
+            <Icon name="MessageCircle" size={60} className="mx-auto mb-4 text-stream-purple mt-6" />
             <h3 className="font-montserrat text-2xl font-bold text-white mb-4">
               Задавайте вопросы в чат
             </h3>
@@ -164,8 +195,17 @@ export default function Index() {
           До встречи в следующий раз!
         </p>
         
-        <div className="bg-black/50 backdrop-blur-md rounded-3xl p-8 border border-stream-orange/30 mb-8">
-          <div className="grid grid-cols-3 gap-8 mb-6">
+        <div className="bg-black/50 backdrop-blur-md rounded-3xl p-8 border border-stream-orange/30 mb-8 relative">
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+            <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-stream-orange shadow-2xl">
+              <img 
+                src={characterImageUrl} 
+                alt="Streamer" 
+                className="w-full h-full object-cover object-center scale-110"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-8 mb-6 mt-4">
             <div className="text-center">
               <div className="text-3xl font-montserrat font-bold text-stream-orange mb-2">
                 1,234
