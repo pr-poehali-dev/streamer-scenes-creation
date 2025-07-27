@@ -112,6 +112,27 @@ export default {
 					'0%': { transform: 'translateY(20px)', opacity: '0' },
 					'100%': { transform: 'translateY(0)', opacity: '1' },
 				},
+				'character-idle': {
+					'0%, 100%': { transform: 'translateY(0px) scale(1)' },
+					'50%': { transform: 'translateY(-2px) scale(1.01)' },
+				},
+				'character-wave': {
+					'0%, 100%': { transform: 'rotate(0deg) translateX(0)' },
+					'25%': { transform: 'rotate(10deg) translateX(2px)' },
+					'75%': { transform: 'rotate(-10deg) translateX(-2px)' },
+				},
+				'character-blink': {
+					'0%, 90%, 100%': { opacity: '1' },
+					'95%': { opacity: '0' },
+				},
+				'character-smile': {
+					'0%, 70%, 100%': { transform: 'scaleY(1)' },
+					'85%': { transform: 'scaleY(1.1)' },
+				},
+				'character-bounce': {
+					'0%, 100%': { transform: 'translateY(0) scale(1)' },
+					'50%': { transform: 'translateY(-8px) scale(1.05)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -119,6 +140,11 @@ export default {
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				'countdown': 'countdown 1s ease-in-out infinite',
 				'slide-up': 'slide-up 0.6s ease-out',
+				'character-idle': 'character-idle 3s ease-in-out infinite',
+				'character-wave': 'character-wave 2s ease-in-out infinite',
+				'character-blink': 'character-blink 4s ease-in-out infinite',
+				'character-smile': 'character-smile 5s ease-in-out infinite',
+				'character-bounce': 'character-bounce 1.5s ease-in-out infinite',
 			}
 		}
 	},

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
+import AnimatedCharacter from '@/components/AnimatedCharacter';
 
 type Scene = 'start' | 'gaming' | 'chat' | 'end';
 
@@ -50,11 +51,12 @@ export default function Index() {
       {/* Character Avatar */}
       <div className="fixed bottom-8 right-8 z-20">
         <div className="relative">
-          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-stream-orange/50 animate-pulse-glow shadow-2xl">
-            <img 
-              src={characterImageUrl} 
-              alt="Streamer Character" 
-              className="w-full h-full object-cover object-center scale-110"
+          <div className="border-4 border-stream-orange/50 animate-pulse-glow shadow-2xl rounded-full">
+            <AnimatedCharacter 
+              imageUrl={characterImageUrl}
+              size="large"
+              mood="excited"
+              className=""
             />
           </div>
           <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-white animate-pulse flex items-center justify-center">
@@ -107,11 +109,12 @@ export default function Index() {
         
         <div className="fixed bottom-6 right-6 bg-black/80 backdrop-blur-md rounded-2xl p-4 border border-stream-orange/30">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-stream-orange">
-              <img 
-                src={characterImageUrl} 
-                alt="Streamer" 
-                className="w-full h-full object-cover object-center scale-110"
+            <div className="border-2 border-stream-orange rounded-full">
+              <AnimatedCharacter 
+                imageUrl={characterImageUrl}
+                size="small"
+                mood="focused"
+                className=""
               />
             </div>
             <div>
@@ -137,11 +140,12 @@ export default function Index() {
           
           <div className="bg-black/50 backdrop-blur-md rounded-3xl p-8 border border-stream-purple/30 mb-8 relative">
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-              <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-stream-purple shadow-lg">
-                <img 
-                  src={characterImageUrl} 
-                  alt="Streamer" 
-                  className="w-full h-full object-cover object-center scale-110"
+              <div className="border-3 border-stream-purple shadow-lg rounded-full">
+                <AnimatedCharacter 
+                  imageUrl={characterImageUrl}
+                  size="medium"
+                  mood="happy"
+                  className=""
                 />
               </div>
             </div>
@@ -197,11 +201,12 @@ export default function Index() {
         
         <div className="bg-black/50 backdrop-blur-md rounded-3xl p-8 border border-stream-orange/30 mb-8 relative">
           <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-            <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-stream-orange shadow-2xl">
-              <img 
-                src={characterImageUrl} 
-                alt="Streamer" 
-                className="w-full h-full object-cover object-center scale-110"
+            <div className="border-4 border-stream-orange shadow-2xl rounded-full">
+              <AnimatedCharacter 
+                imageUrl={characterImageUrl}
+                size="large"
+                mood="happy"
+                className="w-20 h-20"
               />
             </div>
           </div>
